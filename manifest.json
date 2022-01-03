@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "name": "Monitorar Telegram",
+    "description": "Monitora novas mensagens no telegram",
+    "browser_action": {
+        "default_title": "Analizador",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "page": "background/background.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [
+        "scripts/jquery-3.6.0.min.js"
+    ]
+
+}
